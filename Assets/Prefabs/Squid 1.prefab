@@ -135,7 +135,7 @@ GameObject:
   - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: Squid 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -789,6 +789,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 200
   rotateSpeed: 200
+  terrain: {fileID: 0}
+  heightOffset: 5
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
