@@ -23,13 +23,13 @@ public class Control : MonoBehaviour {
     Vector3 move = new Vector3(0.0f, 0.0f, z * speed);
     move = transform.TransformDirection(move);
 
-    /*transform.position = transform.position + move;
+    //transform.position = transform.position + move;
 
-    transform.Rotate(Vector3.up, x * rotateSpeed * Time.deltaTime);*/
+    transform.Rotate(Vector3.up, x * rotateSpeed * Time.deltaTime);
 
     rigid.AddForce(move, ForceMode.Force);
 
-    rigid.AddTorque(0.0f, x * rotateSpeed, 0.0f, ForceMode.Force);
+    //rigid.AddTorque(0.0f, x * rotateSpeed, 0.0f, ForceMode.Force);
 
 	}
 }
