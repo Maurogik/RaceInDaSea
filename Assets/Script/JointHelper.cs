@@ -50,16 +50,12 @@ public class JointHelper : MonoBehaviour {
 
 
 	}
-
+  /*
   void Update()
   {
     float massModif = Mathf.Sqrt(massModifier);
 
-    /*//Start();
-    if (massModif > 0.5f)
-    {
-      return;
-    }*/
+    //Start();
 
     JointController jc = GameController.FindObjectOfType<JointController>();
     CharacterJoint cj = GetComponent<CharacterJoint>();
@@ -82,5 +78,5 @@ public class JointHelper : MonoBehaviour {
 
     rigid.AddForce(force, ForceMode.Force);
   }
-	
+	*/
 }
