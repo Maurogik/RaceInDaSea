@@ -14263,7 +14263,7 @@ MonoBehaviour:
   m_LightmapIndex: -1
   m_LightmapSize: 1024
   m_DrawTreesAndFoliage: 1
-  m_MaterialTemplate: {fileID: 2100000, guid: 52a819403d8866147bb26c2e15e3f5a0, type: 2}
+  m_MaterialTemplate: {fileID: 2100000, guid: 29e4330112d0ab74eb1f3b5e686f101f, type: 2}
 --- !u!4 &1167606292
 Transform:
   m_ObjectHideFlags: 0

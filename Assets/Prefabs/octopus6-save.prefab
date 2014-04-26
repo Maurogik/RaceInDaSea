@@ -3366,7 +3366,7 @@ GameObject:
   - 114: {fileID: 11400080}
   - 75: {fileID: 7500000}
   m_Layer: 0
-  m_Name: octopus6
+  m_Name: octopus6-save
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8277,7 +8277,7 @@ ConstantForce:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100386}
   m_Enabled: 1
-  m_Force: {x: 0, y: -30, z: 0}
+  m_Force: {x: 0, y: -10, z: 0}
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0, y: 0, z: 0}
@@ -8900,10 +8900,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxRotation: 1
   drag: .00999999978
-  angularDrag: .5
-  mass: .100000001
+  angularDrag: .00999999978
+  mass: .00999999978
   randomness: 0
-  spring: 200
+  spring: 5
   damping: 5
   time: 5
   animDuration: 5
