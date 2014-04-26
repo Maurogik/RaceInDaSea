@@ -24,8 +24,9 @@ public class Control : MonoBehaviour {
 
     Rigidbody rigid = transform.rigidbody;
 
-    Vector3 move = forward * z * speed;
+    Vector3 move = forward * z;
     move = transform.TransformDirection(move);
+    move *= speed;
 
     //transform.position = transform.position + move;
 

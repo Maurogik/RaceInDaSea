@@ -16,6 +16,7 @@ public class JointHelper : MonoBehaviour {
     float mass = jc.mass;// +(jc.mass * Random.Range(-50, 50) / 100.0f * jc.randomness);
     float drag = jc.drag;// +(jc.drag * Random.Range(-50, 50) / 100.0f * jc.randomness);
     float angularDrag = jc.angularDrag;// +(jc.angularDrag * Random.Range(-50, 50) / 100.0f * jc.randomness);
+    float massModif = Mathf.Sqrt(massModifier);
 
     SoftJointLimit limit = cj.highTwistLimit;
     limit.limit = rotation;
@@ -42,7 +43,7 @@ public class JointHelper : MonoBehaviour {
     cj.swing2Limit = limit;
 
     Rigidbody rigid = GetComponent<Rigidbody>();
-    rigid.mass = mass * massModifier;
+    rigid.mass = mass * massModif;
     rigid.drag = drag; 
     rigid.angularDrag = angularDrag;
 
@@ -52,11 +53,14 @@ public class JointHelper : MonoBehaviour {
 
   void Update()
   {
-    //Start();
-    if (massModifier > 0.5f)
+    float massModif = Mathf.Sqrt(massModifier);
+
+    /*//Start();
+    if (massModif > 0.5f)
     {
       return;
-    }
+    }*/
+
     JointController jc = GameController.FindObjectOfType<JointController>();
     CharacterJoint cj = GetComponent<CharacterJoint>();
     Rigidbody rigid = GetComponent<Rigidbody>();
@@ -67,11 +71,11 @@ public class JointHelper : MonoBehaviour {
     Vector3 forceDown = new Vector3(-0.05f, -1f, 0);
     forceDown *= jc.randomness * rigid.mass * Time.deltaTime;
 
-    float time = jc.time + massModifier;
+    float time = jc.time + massModif;
     time = Mathf.Abs(jc.animDuration - time);
 
     Vector3 force = forceUp * time + forceDown * jc.time;
-    force *= massModifier;
+    force *= massModif;
     force = transform.TransformDirection(force);
 
 
