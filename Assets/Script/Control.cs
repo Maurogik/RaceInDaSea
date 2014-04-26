@@ -5,6 +5,8 @@ public class Control : MonoBehaviour {
 
   public float speed = 1.0f;
   public float rotateSpeed = 1.0f;
+  public Terrain terrain;
+  public float heightOffset = 5.0f;
 
 
 	// Use this for initialization
@@ -14,6 +16,7 @@ public class Control : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
 
     float x = Input.GetAxis("Horizontal");
     float z = Input.GetAxis("Vertical");
@@ -28,6 +31,11 @@ public class Control : MonoBehaviour {
     transform.Rotate(Vector3.up, x * rotateSpeed * Time.deltaTime);
 
     rigid.AddForce(move, ForceMode.Force);
+
+    float height = terrain.SampleHeight(transform.position);
+    Vector3 pos = transform.position;
+    pos.y = Mathf.Max(height + heightOffset, pos.y);
+    transform.position = pos;
 
     //rigid.AddTorque(0.0f, x * rotateSpeed, 0.0f, ForceMode.Force);
 
