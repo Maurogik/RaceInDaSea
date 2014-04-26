@@ -8,6 +8,7 @@ public class StartBlock : MonoBehaviour {
   {
     player.transform.position = transform.position;
     player.transform.rotation = transform.rotation;
+    player.rigidbody.velocity = Vector3.zero;
   }
 	
 	// Update is called once per frame
