@@ -13,12 +13,12 @@ SceneSettings:
 --- !u!104 &2
 RenderSettings:
   m_Fog: 1
-  m_FogColor: {r: .411764711, g: .886274517, b: .984313726, a: .235294119}
-  m_FogMode: 3
-  m_FogDensity: .0299999993
-  m_LinearFogStart: 0
+  m_FogColor: {r: .0112158554, g: .20133549, b: .508451641, a: .235294119}
+  m_FogMode: 1
+  m_FogDensity: .00800000038
+  m_LinearFogStart: 20
   m_LinearFogEnd: 300
-  m_AmbientLight: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+  m_AmbientLight: {r: .17497465, g: .307473063, b: .355172426, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: .5
   m_FlareStrength: 1
@@ -159,7 +159,7 @@ GameObject:
   - 75: {fileID: 225479503}
   m_Layer: 0
   m_Name: Squid
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1100,6 +1100,90 @@ Prefab:
     - target: {fileID: 5400016, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14400006, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
+      propertyPath: m_ConnectedAnchor.x
+      value: -.0999984518
+      objectReference: {fileID: 0}
+    - target: {fileID: 14400006, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
+      propertyPath: m_ConnectedAnchor.y
+      value: -.300000191
+      objectReference: {fileID: 0}
+    - target: {fileID: 14400006, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
+      propertyPath: m_ConnectedAnchor.z
+      value: -.299999297
+      objectReference: {fileID: 0}
+    - target: {fileID: 14400000, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
+      propertyPath: m_ConnectedAnchor.x
+      value: .0999985188
+      objectReference: {fileID: 0}
+    - target: {fileID: 14400000, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
+      propertyPath: m_ConnectedAnchor.y
+      value: -.300000191
+      objectReference: {fileID: 0}
+    - target: {fileID: 14400000, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
+      propertyPath: m_ConnectedAnchor.z
+      value: -.299999267
+      objectReference: {fileID: 0}
+    - target: {fileID: 14400014, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
+      propertyPath: m_ConnectedAnchor.x
+      value: .300003111
+      objectReference: {fileID: 0}
+    - target: {fileID: 14400014, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
+      propertyPath: m_ConnectedAnchor.y
+      value: -.150000572
+      objectReference: {fileID: 0}
+    - target: {fileID: 14400014, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
+      propertyPath: m_ConnectedAnchor.z
+      value: -.299999237
+      objectReference: {fileID: 0}
+    - target: {fileID: 14400012, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
+      propertyPath: m_ConnectedAnchor.x
+      value: -.300003052
+      objectReference: {fileID: 0}
+    - target: {fileID: 14400012, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
+      propertyPath: m_ConnectedAnchor.z
+      value: -.299999297
+      objectReference: {fileID: 0}
+    - target: {fileID: 14400010, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
+      propertyPath: m_ConnectedAnchor.x
+      value: -.300003052
+      objectReference: {fileID: 0}
+    - target: {fileID: 14400010, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
+      propertyPath: m_ConnectedAnchor.z
+      value: -.299999297
+      objectReference: {fileID: 0}
+    - target: {fileID: 14400004, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
+      propertyPath: m_ConnectedAnchor.x
+      value: -.0999984518
+      objectReference: {fileID: 0}
+    - target: {fileID: 14400004, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
+      propertyPath: m_ConnectedAnchor.y
+      value: .300000191
+      objectReference: {fileID: 0}
+    - target: {fileID: 14400004, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
+      propertyPath: m_ConnectedAnchor.z
+      value: -.299999297
+      objectReference: {fileID: 0}
+    - target: {fileID: 14400002, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
+      propertyPath: m_ConnectedAnchor.x
+      value: .300003111
+      objectReference: {fileID: 0}
+    - target: {fileID: 14400002, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
+      propertyPath: m_ConnectedAnchor.z
+      value: -.299999237
+      objectReference: {fileID: 0}
+    - target: {fileID: 14400008, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
+      propertyPath: m_ConnectedAnchor.x
+      value: .0999985188
+      objectReference: {fileID: 0}
+    - target: {fileID: 14400008, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
+      propertyPath: m_ConnectedAnchor.y
+      value: .300000191
+      objectReference: {fileID: 0}
+    - target: {fileID: 14400008, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
+      propertyPath: m_ConnectedAnchor.z
+      value: -.299999267
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
