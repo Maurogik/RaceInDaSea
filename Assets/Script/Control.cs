@@ -7,6 +7,7 @@ public class Control : MonoBehaviour {
   public float rotateSpeed = 1.0f;
   public Terrain terrain;
   public float heightOffset = 5.0f;
+  public Vector3 forward;
 
 
 	// Use this for initialization
@@ -23,7 +24,7 @@ public class Control : MonoBehaviour {
 
     Rigidbody rigid = transform.rigidbody;
 
-    Vector3 move = new Vector3(0.0f, 0.0f, z * speed);
+    Vector3 move = forward * z * speed;
     move = transform.TransformDirection(move);
 
     //transform.position = transform.position + move;

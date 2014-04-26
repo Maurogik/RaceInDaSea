@@ -14514,6 +14514,10 @@ Prefab:
       propertyPath: terrain
       value: 
       objectReference: {fileID: 1167606291}
+    - target: {fileID: 11400004, guid: 185e1686251e5dc4fab8253d115cbb82, type: 2}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 400386, guid: cc035b4310e1c714fb83883773f46a7f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 185e1686251e5dc4fab8253d115cbb82, type: 2}
   m_RootGameObject: {fileID: 1278373291}
@@ -15734,7 +15738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75d0939dfa7f98b4883ced6c386bbe6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 400012, guid: 54845c224925deb46b17aee565ecc97e, type: 2}
+  playerPrefab: {fileID: 400386, guid: cc035b4310e1c714fb83883773f46a7f, type: 2}
   finishLine: {fileID: 1142894231}
   startingBlock: {fileID: 953159870}
   terrain: {fileID: 1167606291}
@@ -16464,6 +16468,7 @@ MonoBehaviour:
   rotateSpeed: 5
   terrain: {fileID: 0}
   heightOffset: 5
+  forward: {x: 0, y: 0, z: 0}
 --- !u!23 &1318898102
 Renderer:
   m_ObjectHideFlags: 0
