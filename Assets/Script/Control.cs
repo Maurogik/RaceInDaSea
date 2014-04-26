@@ -4,6 +4,7 @@ using System.Collections;
 public class Control : MonoBehaviour {
 
   public float speed = 1.0f;
+  public float rotateSpeed = 1.0f;
 
 
 	// Use this for initialization
@@ -12,13 +13,23 @@ public class Control : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
     float x = Input.GetAxis("Horizontal");
     float z = Input.GetAxis("Vertical");
 
-    Vector3 move = new Vector3(x * speed * Time.deltaTime, 0.0f, z * speed * Time.deltaTime);
-    transform.position = transform.position + move;
+    Rigidbody rigid = transform.rigidbody;
+
+    Vector3 move = new Vector3(0.0f, 0.0f, z * speed);
+    move = transform.TransformDirection(move);
+
+    /*transform.position = transform.position + move;
+
+    transform.Rotate(Vector3.up, x * rotateSpeed * Time.deltaTime);*/
+
+    rigid.AddForce(move, ForceMode.Force);
+
+    rigid.AddTorque(0.0f, x * rotateSpeed, 0.0f, ForceMode.Force);
 
 	}
 }
