@@ -45,7 +45,7 @@ public class Control : MonoBehaviour {
     rigid.AddForce(move, ForceMode.Force);
 
 
-    if (Input.GetButton("Drift" + (playerIndex + 1)))
+    if (Input.GetButton("Drift" + (playerIndex + 1)) || Mathf.Abs(Input.GetAxis("D" + (playerIndex + 1)))> 0.5f)
     {
       rigid.mass = originalMass / GameConfig.GetInstance().driftStrength;
     }
