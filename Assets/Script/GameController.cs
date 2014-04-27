@@ -10,6 +10,9 @@ public class GameController : MonoBehaviour {
   public StartBlock startingBlock;
   public Terrain terrain;
 
+  public Texture2D bombTex;
+  public Texture2D inkTex;
+
 
   public List<GameObject> players;
 
@@ -70,7 +73,22 @@ public class GameController : MonoBehaviour {
 
     for (int i = 0; i < conf.players.Count; ++i)
     {
-      GUI.Label(new Rect(50, (Screen.height / 2 ) * (1-i) + 50, 200, 80), "Player " + (conf.players[i] + 1));
+      GUI.Label(new Rect(20, (Screen.height / 2 ) * (1-i) + 20, 120, 80), "Player " + (conf.players[i] + 1));
+
+      Control control = players[i].GetComponent<Control>();
+      Bonus.BonusType type = control.GetBonusType();
+      Debug.Log("Type : " + type);
+      Rect texRect = new Rect(20, (Screen.height / 2 ) * (1-i) + 100, 100, 100);
+
+      if (type == Bonus.BonusType.Ink)
+      {
+        GUI.DrawTexture(texRect, inkTex);
+      }
+      else if (type == Bonus.BonusType.Bomb)
+      {
+        GUI.DrawTexture(texRect, bombTex);
+      }
+
     }
 
   }

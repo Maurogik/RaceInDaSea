@@ -28,4 +28,9 @@ public class BombBonus : Bonus {
     gameObject.SetActive(true);
     rigidbody.AddForce(transform.TransformDirection(projDir) * projectionForce, ForceMode.Impulse);
   }
+
+  public override BonusType GetBonusType()
+  {
+    return BonusType.Bomb;
+  }
 }

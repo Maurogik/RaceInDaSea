@@ -3,6 +3,13 @@ using System.Collections;
 
 public class Bonus : MonoBehaviour {
 
+  public enum BonusType
+  {
+    None,
+    Bomb,
+    Ink
+  }
+
   protected bool isActivated;
   public Vector3 posOffset;
 
@@ -31,7 +38,8 @@ public class Bonus : MonoBehaviour {
     return isActivated;
   }
 
-  public void drawIcon()
+  public virtual BonusType GetBonusType()
   {
+    return BonusType.None;
   }
 }

@@ -34,4 +34,9 @@ public class InkBonus : Bonus {
     base.activate();
     gameObject.SetActive(true);
   }
+
+  public override BonusType GetBonusType()
+  {
+    return BonusType.Ink;
+  }
 }

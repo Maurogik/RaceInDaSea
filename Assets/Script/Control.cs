@@ -84,4 +84,9 @@ public class Control : MonoBehaviour {
     currentBonus.transform.localPosition = currentBonus.posOffset;
   }
 
+  public Bonus.BonusType GetBonusType()
+  {
+    return currentBonus != null ? currentBonus.GetBonusType() : Bonus.BonusType.None;
+  }
+
 }
