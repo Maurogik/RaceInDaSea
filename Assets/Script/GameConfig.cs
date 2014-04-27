@@ -25,5 +25,6 @@ public class GameConfig {
   public int maxPlayers = 2;
   public List<string> playersPosition;
   public bool displayEndGameMenu = false;
+  public GUISkin skin;
 
 }

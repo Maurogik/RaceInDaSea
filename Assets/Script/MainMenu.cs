@@ -30,6 +30,8 @@ public class MainMenu : MonoBehaviour {
     {
       state = MenuState.EndGameMenu;
     }
+
+    GameConfig.GetInstance().skin = menuSkin;
 	}
 	
 	// Update is called once per frame

@@ -33,6 +33,7 @@ public class GameController : MonoBehaviour {
       playerCam.rect = new Rect(0.0f, 0.0f + i * 0.5f, 1.0f, 1.0f / conf.players.Count);
 
     }
+    players[0].AddComponent<AudioListener>();
 
 
 	}
@@ -51,7 +52,7 @@ public class GameController : MonoBehaviour {
       }
     }
     GameConfig.GetInstance().displayEndGameMenu = true;
-    Application.LoadLevel("MainMenu");
+    Application.LoadLevel("MenuScene");
   }
 	
 	// Update is called once per frame
