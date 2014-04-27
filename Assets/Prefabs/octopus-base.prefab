@@ -3366,7 +3366,7 @@ GameObject:
   - 114: {fileID: 11400080}
   - 75: {fileID: 7500000}
   m_Layer: 8
-  m_Name: octopus6
+  m_Name: octopus-base
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
