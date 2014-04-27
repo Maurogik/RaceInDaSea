@@ -14,7 +14,8 @@ public class SpeedBlock : MonoBehaviour {
 	{
 		if (other.tag == "Player")
 		{
-			Vector3 move = new Vector3(0, 0, 1);
+      Vector3 move = Vector3.forward;
+      move = transform.TransformDirection(move);
 			other.gameObject.transform.rigidbody.AddForce(move*force, ForceMode.Impulse);
 		}
 	}

@@ -3,20 +3,34 @@ using System.Collections;
 
 public class Bonus : MonoBehaviour {
 
-  private bool isActivated;
+  protected bool isActivated;
 
 	// Use this for initialization
-	virtual void Start () {
+	public virtual void Start () {
     isActivated = false;
 	}
 	
 	// Update is called once per frame
-	virtual void Update () {
+	public virtual void Update () {
 	  
 	}
 
-  virtual void activate()
+  public virtual void activate()
   {
+    isActivated = true;
+  }
 
+  public virtual void desactivate() 
+  {
+    Destroy(gameObject);
+  }
+
+  public bool IsActivated()
+  {
+    return isActivated;
+  }
+
+  public void drawIcon()
+  {
   }
 }

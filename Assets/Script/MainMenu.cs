@@ -8,13 +8,15 @@ public class MainMenu : MonoBehaviour {
   Rect quitRect;
   Rect titleRect;
   Rect infoRect;
+  Rect loadingRect;
   MenuState state;
 
   enum MenuState
   {
     StartMenu,
     PlayerConnectMenu,
-    EndGameMenu
+    EndGameMenu,
+    LoadingScreen
   }
 
 	// Use this for initialization
@@ -25,6 +27,7 @@ public class MainMenu : MonoBehaviour {
     quitRect = new Rect(Screen.width / 2 - 200, Screen.height / 2 -150 , 400, 100);
     titleRect = new Rect(Screen.width / 2 - 200, 50, 400, 100);
     infoRect = new Rect(100, Screen.height / 2 , Screen.width - 200, 200);
+    loadingRect = new Rect(Screen.width / 2 - 200, Screen.height / 2 - 200, 400, 400);
 
     if (GameConfig.GetInstance().displayEndGameMenu)
     {
@@ -89,7 +92,7 @@ public class MainMenu : MonoBehaviour {
         bool start = GUI.Button(startRect, "Start");
         if (start && GameConfig.GetInstance().players.Count > 0)
         {
-          Application.LoadLevel("RaceScene");
+          state = MenuState.LoadingScreen;
         }
 
         if (GUI.Button(quitRect, "Back"))
@@ -120,6 +123,11 @@ public class MainMenu : MonoBehaviour {
           GUI.Box(new Rect(Screen.width / 2 - 100, Screen.height / 2 + i * 150, 200, 100), GameConfig.GetInstance().playersPosition[i]);
         }
 
+        break;
+
+      case MenuState.LoadingScreen :
+        GUI.Label(loadingRect, "Loading level, please wait");
+        Application.LoadLevel("RaceScene");
         break;
     }
 

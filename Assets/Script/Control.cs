@@ -11,6 +11,7 @@ public class Control : MonoBehaviour {
   public Vector3 left;
   public int playerIndex = 0;
   public bool enabled = true;
+  private Bonus currentBonus;
 
   private float originalMass;
 
@@ -54,14 +55,30 @@ public class Control : MonoBehaviour {
       rigid.mass = originalMass;
     }
 
+    if (Input.GetKey(KeyCode.A) && currentBonus != null)
+    {
+      currentBonus.activate();
+    }
+
 
     float height = terrain.SampleHeight(transform.position);
     Vector3 pos = transform.position;
     pos.y = Mathf.Max(height + heightOffset, pos.y);
     transform.position = pos;
 
-    //rigid.AddTorque(0.0f, x * rotateSpeed, 0.0f, ForceMode.Force);
-
 	}
+
+  public void TakeBonus(Bonus bonus)
+  {
+    if (currentBonus != null && !currentBonus.IsActivated())
+    {
+      Destroy(currentBonus.gameObject);
+    }
+
+    currentBonus = bonus;
+    currentBonus.transform.parent = transform;
+    currentBonus.transform.rotation = transform.rotation;
+    currentBonus.transform.position = transform.position;
+  }
 
 }

@@ -2,21 +2,15 @@
 using System.Collections;
 
 public class BonusBlock : MonoBehaviour {
-	
-	public GameController gameController;
-	
-	// Use this for initialization
-	void Start ()
-	{
-		
-	}
+
+  public Bonus bonus;
 	
 	void OnTriggerEnter(Collider other)
 	{
 		if (other.tag == "Player")
 		{
-			int ind = other.gameObject.GetComponent<Control>().playerIndex;
-
+      other.gameObject.GetComponent<Control>().TakeBonus(bonus);
+      Destroy(gameObject);
 		}
 	}
 }
