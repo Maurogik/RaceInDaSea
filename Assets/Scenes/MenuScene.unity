@@ -193,3 +193,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuSkin: {fileID: 11400000, guid: 895afffdc7a65da4bb5f3982522223da, type: 2}
+  charNumber: 4
+  poulpID:
+  - {fileID: 2800000, guid: 0e4b199ac8635504fa3ea896d84f6d75, type: 3}
+  - {fileID: 2800000, guid: c44f037d35ae5b84fb47af9a70a9e60c, type: 3}
+  - {fileID: 2800000, guid: 8082dafe136803f4f9033feb29bfc537, type: 3}
+  - {fileID: 2800000, guid: 4801673974d8a5648aec2cff5aa7c8cb, type: 3}

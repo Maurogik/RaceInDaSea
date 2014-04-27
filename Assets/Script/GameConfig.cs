@@ -19,6 +19,7 @@ public class GameConfig {
   {
     players = new List<int>();
     playersPosition = new List<string>();
+	selectedPrefab = new List<int>();
   }
 
   public List<int> players;
@@ -27,5 +28,5 @@ public class GameConfig {
   public bool displayEndGameMenu = false;
   public GUISkin skin;
   public float driftStrength = 4.0f;
-
+  public List<int> selectedPrefab;
 }

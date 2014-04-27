@@ -1,14 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class MainMenu : MonoBehaviour {
 
   public GUISkin menuSkin;
+  public Texture2D[] poulpID;
   Rect startRect;
   Rect quitRect;
   Rect titleRect;
   Rect infoRect;
   Rect loadingRect;
+  List<Rect> charsRect;
+  int selectAvatar;
   MenuState state;
 
   enum MenuState
@@ -16,11 +20,12 @@ public class MainMenu : MonoBehaviour {
     StartMenu,
     PlayerConnectMenu,
     EndGameMenu,
-    LoadingScreen
+    LoadingScreen,
+	PlayerSelectMenu
   }
 
 	// Use this for initialization
-	void Start ()
+  void Start ()
   {
     state = MenuState.StartMenu;
     startRect = new Rect(Screen.width / 2 - 200, Screen.height / 2 - 300, 400, 100);
@@ -28,7 +33,18 @@ public class MainMenu : MonoBehaviour {
     titleRect = new Rect(Screen.width / 2 - 200, 50, 400, 100);
     infoRect = new Rect(100, Screen.height / 2 , Screen.width - 200, 200);
     loadingRect = new Rect(Screen.width / 2 - 200, Screen.height / 2 - 200, 400, 400);
-
+	
+	charsRect = new List<Rect>();
+	Rect rect = new Rect(Screen.width / 2 - 325, Screen.height / 2 - 325, 300, 300);
+	charsRect.Add(rect);
+		Rect rect2 = new Rect(Screen.width / 2 + 25, Screen.height / 2 - 325, 300, 300);
+	charsRect.Add(rect2);
+		Rect rect3 = new Rect(Screen.width / 2 - 325, Screen.height / 2 + 25, 300, 300);
+	charsRect.Add(rect3);
+		Rect rect4 = new Rect(Screen.width / 2 + 25, Screen.height / 2 + 25, 300, 300);
+	charsRect.Add(rect4);
+		selectAvatar = 0;
+	
     if (GameConfig.GetInstance().displayEndGameMenu)
     {
       state = MenuState.EndGameMenu;
@@ -86,13 +102,13 @@ public class MainMenu : MonoBehaviour {
 
         GUI.Label(titleRect, "Player Connection");
 
-        GUI.Label(infoRect, "Player 1 : Press 'space', 'left shift' or joysitck button 'A' \n"
-                          + "Player 2 : Press 'enter', 'right shift' or joysitck button 'A'");
+        GUI.Label(infoRect, "Player 1 : Press 'space', 'left shift' or joystick button 'A' \n"
+                          + "Player 2 : Press 'enter', 'right shift' or joystick button 'A'");
 
         bool start = GUI.Button(startRect, "Start");
         if (start && GameConfig.GetInstance().players.Count > 0)
         {
-          state = MenuState.LoadingScreen;
+          state = MenuState.PlayerSelectMenu;
         }
 
         if (GUI.Button(quitRect, "Back"))
@@ -107,6 +123,19 @@ public class MainMenu : MonoBehaviour {
         }
 
         break;
+	  case MenuState.PlayerSelectMenu :
+			GUI.Label(titleRect, "Choose your character, player " + (selectAvatar+1) + "!");
+			for(int i=0; i<poulpID.Length; i++) {
+				bool selected = GUI.Button(charsRect[i], poulpID[i]);
+				if(selected) {
+					GameConfig.GetInstance().selectedPrefab.Add(i);
+					selectAvatar++;
+					if(selectAvatar == GameConfig.GetInstance().players.Count) {
+						state = MenuState.LoadingScreen;
+					}
+				}
+			}
+		break;
       case MenuState.EndGameMenu :
 
         GUI.Label(titleRect, "So, you won or what ?");

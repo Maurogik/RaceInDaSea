@@ -3,9 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class GameController : MonoBehaviour {
-
-  
-  public Transform playerPrefab;
+	
   public FinishBlock finishLine;
   public StartBlock startingBlock;
   public Terrain terrain;
@@ -15,7 +13,7 @@ public class GameController : MonoBehaviour {
 
 
   public List<GameObject> players;
-
+  public List<Transform> prefabs;
 
 
 	// Use this for initialization
@@ -27,7 +25,7 @@ public class GameController : MonoBehaviour {
     for (int i = 0; i < conf.players.Count; ++i)
     {
       Debug.Log(" ind : " + i + " player " + conf.players[i]);
-      GameObject player = (Instantiate(playerPrefab) as Transform).gameObject;
+      GameObject player = (Instantiate(prefabs[GameConfig.GetInstance().selectedPrefab[i]]) as Transform).gameObject;
       player.GetComponent<Control>().terrain = terrain;
       player.GetComponent<Control>().playerIndex = conf.players[i];
       startingBlock.StartGame(player);
