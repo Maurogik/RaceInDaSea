@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour {
   public Terrain terrain;
 
 
-  private List<GameObject> players;
+  public List<GameObject> players;
 
 
 
