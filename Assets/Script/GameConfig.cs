@@ -26,5 +26,6 @@ public class GameConfig {
   public List<string> playersPosition;
   public bool displayEndGameMenu = false;
   public GUISkin skin;
+  public float driftStrength = 4.0f;
 
 }

@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour {
   public Terrain terrain;
 
 
-  private List<GameObject> players;
+  public List<GameObject> players;
 
 
 
@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour {
 
     for (int i = 0; i < conf.players.Count; ++i)
     {
+      Debug.Log(" ind : " + i + " player " + conf.players[i]);
       GameObject player = (Instantiate(playerPrefab) as Transform).gameObject;
       player.GetComponent<Control>().terrain = terrain;
       player.GetComponent<Control>().playerIndex = conf.players[i];
@@ -30,7 +31,7 @@ public class GameController : MonoBehaviour {
       players.Add(player);
 
       Camera playerCam = player.transform.GetComponentInChildren<Camera>();
-      playerCam.rect = new Rect(0.0f, 0.0f + i * 0.5f, 1.0f, 1.0f / conf.players.Count);
+      playerCam.rect = new Rect(0.0f, 0.0f + ((1-i) * 0.5f), 1.0f, 1.0f / conf.players.Count);
 
     }
     players[0].AddComponent<AudioListener>();
@@ -59,4 +60,18 @@ public class GameController : MonoBehaviour {
 	void Update () {
 	
 	}
+
+  void OnGUI()
+  {
+
+    GUI.skin = GameConfig.GetInstance().skin;
+
+    GameConfig conf = GameConfig.GetInstance();
+
+    for (int i = 0; i < conf.players.Count; ++i)
+    {
+      GUI.Label(new Rect(50, (Screen.height / 2 ) * i + 50, 200, 80), "Player " + (conf.players[i] + 1));
+    }
+
+  }
 }
