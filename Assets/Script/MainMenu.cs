@@ -44,7 +44,7 @@ public class MainMenu : MonoBehaviour {
         //Debug.Log("here");
         float val = Input.GetAxis("H" + (i + 1));
         bool here = i == 0 ? Input.GetKey(KeyCode.Joystick1Button0) : Input.GetKey(KeyCode.Joystick2Button0);
-        here |= Input.GetButton("Dash" + (i + 1));
+        here |= Input.GetButton("Drift" + (i + 1));
         if (here)
         {
           Debug.Log("connect " + i);

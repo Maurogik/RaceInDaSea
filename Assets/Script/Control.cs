@@ -8,12 +8,15 @@ public class Control : MonoBehaviour {
   public Terrain terrain;
   public float heightOffset = 5.0f;
   public Vector3 forward;
+  public Vector3 left;
   public int playerIndex = 0;
   public bool enabled = true;
 
+  private float originalMass;
+
 	// Use this for initialization
 	void Start () {
-	  
+    originalMass = rigidbody.mass;
 	}
 	
 	// Update is called once per frame
@@ -40,6 +43,17 @@ public class Control : MonoBehaviour {
     transform.Rotate(Vector3.up, x * rotateSpeed * Time.deltaTime);
 
     rigid.AddForce(move, ForceMode.Force);
+
+
+    if (Input.GetButton("Drift" + (playerIndex + 1)))
+    {
+      rigid.mass = originalMass / GameConfig.GetInstance().driftStrength;
+    }
+    else
+    {
+      rigid.mass = originalMass;
+    }
+
 
     float height = terrain.SampleHeight(transform.position);
     Vector3 pos = transform.position;
