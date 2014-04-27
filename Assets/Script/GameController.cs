@@ -37,7 +37,6 @@ public class GameController : MonoBehaviour {
     }
     players[0].AddComponent<AudioListener>();
 
-
 	}
 
   public void EndGame(int player)
