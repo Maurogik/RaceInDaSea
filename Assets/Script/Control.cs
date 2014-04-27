@@ -64,17 +64,4 @@ public class Control : MonoBehaviour {
 
 	}
 
-  void OnGUI(){
-
-    GUI.skin = GameConfig.GetInstance().skin;
-
-    if (playerIndex == 0)
-    {
-      GUI.Label(new Rect(50, 50, 200, 80), "Player 1" );
-    }
-    else
-    {
-      GUI.Label(new Rect(50, Screen.height / 2 + 50, 200, 80), "Player 2" );
-    }
-  }
 }
