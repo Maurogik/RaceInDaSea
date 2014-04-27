@@ -15,7 +15,8 @@ public class FinishBlock : MonoBehaviour {
   {
     if (other.tag == "Player")
     {
-      gameController.EndGame();
+      int ind = other.gameObject.GetComponent<Control>().playerIndex;
+      gameController.EndGame(ind);
     }
   }
 }

@@ -8,6 +8,7 @@ public class Control : MonoBehaviour {
   public Terrain terrain;
   public float heightOffset = 5.0f;
   public Vector3 forward;
+  public int playerIndex = 0;
 
 
 	// Use this for initialization
@@ -19,8 +20,10 @@ public class Control : MonoBehaviour {
 	void FixedUpdate () {
 
 
-    float x = Input.GetAxis("Horizontal");
-    float z = Input.GetAxis("Vertical");
+    float x = Input.GetAxis("Horizontal" + (playerIndex + 1));
+    float z = Input.GetAxis("Vertical" + (playerIndex + 1));
+    x = x != 0 ? x : Input.GetAxis("H" + (playerIndex+1));
+    z = z != 0 ? z : Input.GetAxis("V" + (playerIndex + 1));
 
     Rigidbody rigid = transform.rigidbody;
 
