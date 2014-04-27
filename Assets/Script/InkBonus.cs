@@ -3,7 +3,7 @@ using System.Collections;
 
 public class InkBonus : Bonus {
 
-  private static float duration = 10.0f;
+  private static float duration = 20.0f;
   private float time = 0.0f;
 
 	// Use this for initialization

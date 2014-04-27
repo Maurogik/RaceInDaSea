@@ -55,7 +55,10 @@ public class Control : MonoBehaviour {
       rigid.mass = originalMass;
     }
 
-    if (Input.GetKey(KeyCode.A) && currentBonus != null)
+    if ((Input.GetButton("Activate"+(playerIndex+1))
+      || Input.GetButton("A" + (playerIndex + 1)))
+      && currentBonus != null
+      && !currentBonus.IsActivated())
     {
       currentBonus.activate();
     }
@@ -78,7 +81,7 @@ public class Control : MonoBehaviour {
     currentBonus = bonus;
     currentBonus.transform.parent = transform;
     currentBonus.transform.rotation = transform.rotation;
-    currentBonus.transform.position = transform.position;
+    currentBonus.transform.localPosition = currentBonus.posOffset;
   }
 
 }

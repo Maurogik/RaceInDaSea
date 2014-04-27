@@ -4,6 +4,7 @@ using System.Collections;
 public class Bonus : MonoBehaviour {
 
   protected bool isActivated;
+  public Vector3 posOffset;
 
 	// Use this for initialization
 	public virtual void Start () {
