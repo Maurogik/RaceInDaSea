@@ -25,6 +25,11 @@ public class MainMenu : MonoBehaviour {
     quitRect = new Rect(Screen.width / 2 - 200, Screen.height / 2 -150 , 400, 100);
     titleRect = new Rect(Screen.width / 2 - 200, 50, 400, 100);
     infoRect = new Rect(100, Screen.height / 2 , Screen.width - 200, 200);
+
+    if (GameConfig.GetInstance().displayEndGameMenu)
+    {
+      state = MenuState.EndGameMenu;
+    }
 	}
 	
 	// Update is called once per frame
@@ -96,6 +101,23 @@ public class MainMenu : MonoBehaviour {
         {
           Rect boxRect = new Rect(Screen.width / 2 - 200 + 200 * i, Screen.height / 2 + 300, 180, 100);
           GUI.Box(boxRect, "Player " + (GameConfig.GetInstance().players[i] + 1));
+        }
+
+        break;
+      case MenuState.EndGameMenu :
+
+        GUI.Label(titleRect, "So, you won or what ?");
+
+        if(GUI.Button(startRect, "Back"))
+        {
+          GameConfig.GetInstance().playersPosition.Clear();
+          GameConfig.GetInstance().players.Clear();
+          state = MenuState.StartMenu;
+        }
+
+        for (int i = 0; i < GameConfig.GetInstance().playersPosition.Count; ++i)
+        {
+          GUI.Box(new Rect(Screen.width / 2 - 100, Screen.height / 2 + i * 150, 200, 100), GameConfig.GetInstance().playersPosition[i]);
         }
 
         break;

@@ -9,7 +9,7 @@ public class Control : MonoBehaviour {
   public float heightOffset = 5.0f;
   public Vector3 forward;
   public int playerIndex = 0;
-
+  public bool enabled = true;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +19,10 @@ public class Control : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
+    if (!enabled)
+    {
+      return;
+    }
 
     float x = Input.GetAxis("Horizontal" + (playerIndex + 1));
     float z = Input.GetAxis("Vertical" + (playerIndex + 1));
