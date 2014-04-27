@@ -11,6 +11,10 @@ public class Control : MonoBehaviour {
   public Vector3 left;
   public int playerIndex = 0;
   public bool enabled = true;
+
+  public Camera followCam;
+  public Vector3 CameraPos;
+
   private Bonus currentBonus;
 
   private float originalMass;
@@ -68,6 +72,12 @@ public class Control : MonoBehaviour {
     Vector3 pos = transform.position;
     pos.y = Mathf.Max(height + heightOffset, pos.y);
     transform.position = pos;
+
+    /*float camHeight = terrain.SampleHeight(followCam.transform.position);
+    Vector3 posCam = transform.TransformPoint(CameraPos);
+    posCam.y = Mathf.Max(posCam.y, camHeight + heightOffset);
+    transform.position = posCam;
+    followCam.transform.LookAt(transform.position);*/
 
 	}
 

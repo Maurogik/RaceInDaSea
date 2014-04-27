@@ -28,7 +28,12 @@ public class Bonus : MonoBehaviour {
     isActivated = true;
   }
 
-  public virtual void desactivate() 
+  public virtual void desactivate(float delay = 0.1f) 
+  {
+    Invoke("destroy", delay);
+  }
+
+  private void destroy()
   {
     Destroy(gameObject);
   }

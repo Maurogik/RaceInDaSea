@@ -30,7 +30,7 @@ public class MainMenu : MonoBehaviour {
     state = MenuState.StartMenu;
     startRect = new Rect(Screen.width / 2 - 200, Screen.height / 2 - 300, 400, 100);
     quitRect = new Rect(Screen.width / 2 - 200, Screen.height / 2 -150 , 400, 100);
-    titleRect = new Rect(Screen.width / 2 - 200, 50, 400, 100);
+    titleRect = new Rect(Screen.width / 2 - 400, 20, 800, 100);
     infoRect = new Rect(100, Screen.height / 2 , Screen.width - 200, 200);
     loadingRect = new Rect(Screen.width / 2 - 200, Screen.height / 2 - 200, 400, 400);
 	

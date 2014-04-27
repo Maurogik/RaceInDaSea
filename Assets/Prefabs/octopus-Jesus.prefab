@@ -10319,6 +10319,8 @@ MonoBehaviour:
   left: {x: 0, y: 0, z: 1}
   playerIndex: 0
   enabled: 1
+  followCam: {fileID: 2000000}
+  CameraPos: {x: -7, y: 2, z: 0}
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

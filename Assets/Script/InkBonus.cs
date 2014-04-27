@@ -24,7 +24,8 @@ public class InkBonus : Bonus {
     if (time > duration)
     {
       time = 0.0f;
-      desactivate();
+      particleEmitter.emit = false;
+      desactivate(10.0f);
     }
 
 	}
